@@ -51,6 +51,8 @@ namespace FitnessTracker
 
         private void Activity_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fitnessDataSet.Activitytb' table. You can move, or remove it, as needed.
+            this.activitytbTableAdapter.Fill(this.fitnessDataSet.Activitytb);
             activityAutoID();
         }
 
@@ -96,6 +98,11 @@ namespace FitnessTracker
                 if (insertquery > 0)
                 {
                     MessageBox.Show("Activity data insert Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvActivity.DataSource = activity.GetData();
+                    dgvActivity.Refresh();
+
+                    ClearAll();
                     activityAutoID();
 
                     //StaffLogin Slogin = new StaffLogin();
@@ -111,6 +118,37 @@ namespace FitnessTracker
             AdminDashboard Adashboard = new AdminDashboard();
             this.Hide();
             Adashboard.ShowDialog();
+        }
+
+        private void btnactDelete_Click(object sender, EventArgs e)
+        {
+            int deleteRow = dgvActivity.CurrentCell.RowIndex;
+            dgvActivity.Rows.RemoveAt(deleteRow);
+
+            activity.DeleteActivity(txtActivityID.Text);
+            MessageBox.Show("Activity Successfully Delected");
+
+            ClearAll();
+            activityAutoID();
+
+        }
+
+        public void ClearAll()
+        {
+            txtActivityName.Text = "";
+            txtMetricOne.Text = "";
+            txtMetricTwo.Text = "";
+            txtMetricThree.Text = "";
+        }
+
+        private void dgvActivity_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dgvActivity.CurrentRow.Index;
+            txtActivityID.Text = dgvActivity[0, row].Value.ToString();
+            if (txtActivityID.Text == "") 
+            {
+                activityAutoID();
+            }
         }
     }
 }

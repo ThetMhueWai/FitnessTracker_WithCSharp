@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.dgvActivity = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,16 +43,36 @@
             this.txtMetricTwo = new System.Windows.Forms.TextBox();
             this.btnAddActivity = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnactDelete = new System.Windows.Forms.Button();
+            this.activityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricThreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitytbBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fitnessDataSet = new FitnessTracker.FitnessDataSet();
+            this.activitytbTableAdapter = new FitnessTracker.FitnessDataSetTableAdapters.ActivitytbTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitytbBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvActivity
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(148, 178);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 171);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvActivity.AutoGenerateColumns = false;
+            this.dgvActivity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActivity.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.activityIDDataGridViewTextBoxColumn,
+            this.activityNameDataGridViewTextBoxColumn,
+            this.metricOneDataGridViewTextBoxColumn,
+            this.metricTwoDataGridViewTextBoxColumn,
+            this.metricThreeDataGridViewTextBoxColumn});
+            this.dgvActivity.DataSource = this.activitytbBindingSource;
+            this.dgvActivity.Location = new System.Drawing.Point(70, 176);
+            this.dgvActivity.Name = "dgvActivity";
+            this.dgvActivity.Size = new System.Drawing.Size(542, 175);
+            this.dgvActivity.TabIndex = 0;
+            this.dgvActivity.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivity_CellClick);
             // 
             // label1
             // 
@@ -154,7 +175,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(8, 194);
+            this.btnDashboard.Location = new System.Drawing.Point(12, 8);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(129, 23);
             this.btnDashboard.TabIndex = 13;
@@ -162,11 +183,66 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // btnactDelete
+            // 
+            this.btnactDelete.Location = new System.Drawing.Point(503, 138);
+            this.btnactDelete.Name = "btnactDelete";
+            this.btnactDelete.Size = new System.Drawing.Size(87, 23);
+            this.btnactDelete.TabIndex = 14;
+            this.btnactDelete.Text = "Delete Activity";
+            this.btnactDelete.UseVisualStyleBackColor = true;
+            this.btnactDelete.Click += new System.EventHandler(this.btnactDelete_Click);
+            // 
+            // activityIDDataGridViewTextBoxColumn
+            // 
+            this.activityIDDataGridViewTextBoxColumn.DataPropertyName = "ActivityID";
+            this.activityIDDataGridViewTextBoxColumn.HeaderText = "ActivityID";
+            this.activityIDDataGridViewTextBoxColumn.Name = "activityIDDataGridViewTextBoxColumn";
+            // 
+            // activityNameDataGridViewTextBoxColumn
+            // 
+            this.activityNameDataGridViewTextBoxColumn.DataPropertyName = "ActivityName";
+            this.activityNameDataGridViewTextBoxColumn.HeaderText = "ActivityName";
+            this.activityNameDataGridViewTextBoxColumn.Name = "activityNameDataGridViewTextBoxColumn";
+            // 
+            // metricOneDataGridViewTextBoxColumn
+            // 
+            this.metricOneDataGridViewTextBoxColumn.DataPropertyName = "MetricOne";
+            this.metricOneDataGridViewTextBoxColumn.HeaderText = "MetricOne";
+            this.metricOneDataGridViewTextBoxColumn.Name = "metricOneDataGridViewTextBoxColumn";
+            // 
+            // metricTwoDataGridViewTextBoxColumn
+            // 
+            this.metricTwoDataGridViewTextBoxColumn.DataPropertyName = "MetricTwo";
+            this.metricTwoDataGridViewTextBoxColumn.HeaderText = "MetricTwo";
+            this.metricTwoDataGridViewTextBoxColumn.Name = "metricTwoDataGridViewTextBoxColumn";
+            // 
+            // metricThreeDataGridViewTextBoxColumn
+            // 
+            this.metricThreeDataGridViewTextBoxColumn.DataPropertyName = "MetricThree";
+            this.metricThreeDataGridViewTextBoxColumn.HeaderText = "MetricThree";
+            this.metricThreeDataGridViewTextBoxColumn.Name = "metricThreeDataGridViewTextBoxColumn";
+            // 
+            // activitytbBindingSource
+            // 
+            this.activitytbBindingSource.DataMember = "Activitytb";
+            this.activitytbBindingSource.DataSource = this.fitnessDataSet;
+            // 
+            // fitnessDataSet
+            // 
+            this.fitnessDataSet.DataSetName = "FitnessDataSet";
+            this.fitnessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // activitytbTableAdapter
+            // 
+            this.activitytbTableAdapter.ClearBeforeFill = true;
+            // 
             // Activity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 350);
+            this.ClientSize = new System.Drawing.Size(637, 363);
+            this.Controls.Add(this.btnactDelete);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnAddActivity);
             this.Controls.Add(this.txtMetricTwo);
@@ -180,11 +256,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvActivity);
             this.Name = "Activity";
             this.Text = "Activity";
             this.Load += new System.EventHandler(this.Activity_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitytbBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +270,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvActivity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -206,5 +284,14 @@
         private System.Windows.Forms.TextBox txtMetricTwo;
         private System.Windows.Forms.Button btnAddActivity;
         private System.Windows.Forms.Button btnDashboard;
+        private FitnessDataSet fitnessDataSet;
+        private System.Windows.Forms.BindingSource activitytbBindingSource;
+        private FitnessDataSetTableAdapters.ActivitytbTableAdapter activitytbTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activityIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activityNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metricOneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metricTwoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metricThreeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnactDelete;
     }
 }
