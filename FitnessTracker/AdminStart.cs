@@ -17,18 +17,18 @@ namespace FitnessTracker
             InitializeComponent();
         }
 
-        private void btnnewAdmin_Click(object sender, EventArgs e)
-        {
-            AdminRegister AReg = new AdminRegister();
-            this.Hide();
-            AReg.ShowDialog();
-        }
-
-        private void btnCurrentAdmin_Click(object sender, EventArgs e)
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminLogin Alogin = new AdminLogin();
-            this.Hide();
+            //this.Hide();
             Alogin.ShowDialog();
+        }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminRegister AReg = new AdminRegister();
+            //this.Hide();
+            AReg.ShowDialog();
         }
     }
 }

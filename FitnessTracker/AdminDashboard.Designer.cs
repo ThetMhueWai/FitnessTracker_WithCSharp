@@ -28,57 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtadminuName = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.txtadminuID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddActivity = new System.Windows.Forms.Button();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.tssbtnAName = new System.Windows.Forms.ToolStripSplitButton();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbtnAddActivity = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtadminuName
-            // 
-            this.txtadminuName.Location = new System.Drawing.Point(158, 184);
-            this.txtadminuName.Name = "txtadminuName";
-            this.txtadminuName.Size = new System.Drawing.Size(206, 20);
-            this.txtadminuName.TabIndex = 0;
             // 
             // txtadminuID
             // 
-            this.txtadminuID.Location = new System.Drawing.Point(158, 141);
+            this.txtadminuID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtadminuID.Location = new System.Drawing.Point(178, 155);
             this.txtadminuID.Name = "txtadminuID";
+            this.txtadminuID.ReadOnly = true;
             this.txtadminuID.Size = new System.Drawing.Size(206, 20);
             this.txtadminuID.TabIndex = 1;
             // 
-            // label1
+            // bindingNavigator1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(207, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Admin Dashboard";
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = null;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssbtnAName,
+            this.tsbtnAddActivity});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = null;
+            this.bindingNavigator1.MoveLastItem = null;
+            this.bindingNavigator1.MoveNextItem = null;
+            this.bindingNavigator1.MovePreviousItem = null;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = null;
+            this.bindingNavigator1.Size = new System.Drawing.Size(548, 25);
+            this.bindingNavigator1.TabIndex = 4;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // btnAddActivity
+            // tssbtnAName
             // 
-            this.btnAddActivity.Location = new System.Drawing.Point(22, 317);
-            this.btnAddActivity.Name = "btnAddActivity";
-            this.btnAddActivity.Size = new System.Drawing.Size(75, 23);
-            this.btnAddActivity.TabIndex = 3;
-            this.btnAddActivity.Text = "Add Activity";
-            this.btnAddActivity.UseVisualStyleBackColor = true;
-            this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
+            this.tssbtnAName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tssbtnAName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutToolStripMenuItem});
+            this.tssbtnAName.Image = ((System.Drawing.Image)(resources.GetObject("tssbtnAName.Image")));
+            this.tssbtnAName.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tssbtnAName.Name = "tssbtnAName";
+            this.tssbtnAName.Size = new System.Drawing.Size(68, 22);
+            this.tssbtnAName.Text = "Account";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            // 
+            // tsbtnAddActivity
+            // 
+            this.tsbtnAddActivity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnAddActivity.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnAddActivity.Image")));
+            this.tsbtnAddActivity.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnAddActivity.Name = "tsbtnAddActivity";
+            this.tsbtnAddActivity.Size = new System.Drawing.Size(51, 22);
+            this.tsbtnAddActivity.Text = "Activity";
+            this.tsbtnAddActivity.Click += new System.EventHandler(this.tsbtnAddActivity_Click);
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 358);
-            this.Controls.Add(this.btnAddActivity);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(548, 295);
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.txtadminuID);
-            this.Controls.Add(this.txtadminuName);
             this.Name = "AdminDashboard";
             this.Text = "AdminDashboard";
             this.Load += new System.EventHandler(this.AdminDashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,9 +114,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtadminuName;
         private System.Windows.Forms.TextBox txtadminuID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAddActivity;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripSplitButton tssbtnAName;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbtnAddActivity;
     }
 }

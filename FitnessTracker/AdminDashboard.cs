@@ -19,15 +19,17 @@ namespace FitnessTracker
 
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
-            txtadminuName.Text = AdminLogin.loginUserName;
+            tssbtnAName.Text = AdminLogin.loginUserName;
             txtadminuID.Text = AdminLogin.loginUserID;
         }
 
-        private void btnAddActivity_Click(object sender, EventArgs e)
+        private void tsbtnAddActivity_Click(object sender, EventArgs e)
         {
             Activity acti = new Activity();
-            this.Hide();
+            //this.Hide();
             acti.ShowDialog();
         }
+
+   
     }
 }
