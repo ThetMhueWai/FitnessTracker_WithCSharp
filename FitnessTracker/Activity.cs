@@ -155,7 +155,7 @@ namespace FitnessTracker
         {
             if (txtActivityName.Text == "")
             {
-                MessageBox.Show("");
+                MessageBox.Show("Enter Activity Name");
             }
         }
     }
