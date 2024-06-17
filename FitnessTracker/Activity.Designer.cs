@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvActivity = new System.Windows.Forms.DataGridView();
-            this.activityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metricOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metricTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metricThreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activitytbBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fitnessDataSet = new FitnessTracker.FitnessDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,8 +43,15 @@
             this.btnAddActivity = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnactDelete = new System.Windows.Forms.Button();
-            this.activitytbTableAdapter = new FitnessTracker.FitnessDataSetTableAdapters.ActivitytbTableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.activityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metricThreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitytbBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fitnessDataSet = new FitnessTracker.FitnessDataSet();
+            this.activitytbTableAdapter = new FitnessTracker.FitnessDataSetTableAdapters.ActivitytbTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activitytbBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).BeginInit();
@@ -73,46 +73,6 @@
             this.dgvActivity.Size = new System.Drawing.Size(542, 175);
             this.dgvActivity.TabIndex = 0;
             this.dgvActivity.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivity_CellClick);
-            // 
-            // activityIDDataGridViewTextBoxColumn
-            // 
-            this.activityIDDataGridViewTextBoxColumn.DataPropertyName = "ActivityID";
-            this.activityIDDataGridViewTextBoxColumn.HeaderText = "ActivityID";
-            this.activityIDDataGridViewTextBoxColumn.Name = "activityIDDataGridViewTextBoxColumn";
-            // 
-            // activityNameDataGridViewTextBoxColumn
-            // 
-            this.activityNameDataGridViewTextBoxColumn.DataPropertyName = "ActivityName";
-            this.activityNameDataGridViewTextBoxColumn.HeaderText = "ActivityName";
-            this.activityNameDataGridViewTextBoxColumn.Name = "activityNameDataGridViewTextBoxColumn";
-            // 
-            // metricOneDataGridViewTextBoxColumn
-            // 
-            this.metricOneDataGridViewTextBoxColumn.DataPropertyName = "MetricOne";
-            this.metricOneDataGridViewTextBoxColumn.HeaderText = "MetricOne";
-            this.metricOneDataGridViewTextBoxColumn.Name = "metricOneDataGridViewTextBoxColumn";
-            // 
-            // metricTwoDataGridViewTextBoxColumn
-            // 
-            this.metricTwoDataGridViewTextBoxColumn.DataPropertyName = "MetricTwo";
-            this.metricTwoDataGridViewTextBoxColumn.HeaderText = "MetricTwo";
-            this.metricTwoDataGridViewTextBoxColumn.Name = "metricTwoDataGridViewTextBoxColumn";
-            // 
-            // metricThreeDataGridViewTextBoxColumn
-            // 
-            this.metricThreeDataGridViewTextBoxColumn.DataPropertyName = "MetricThree";
-            this.metricThreeDataGridViewTextBoxColumn.HeaderText = "MetricThree";
-            this.metricThreeDataGridViewTextBoxColumn.Name = "metricThreeDataGridViewTextBoxColumn";
-            // 
-            // activitytbBindingSource
-            // 
-            this.activitytbBindingSource.DataMember = "Activitytb";
-            this.activitytbBindingSource.DataSource = this.fitnessDataSet;
-            // 
-            // fitnessDataSet
-            // 
-            this.fitnessDataSet.DataSetName = "FitnessDataSet";
-            this.fitnessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -224,10 +184,6 @@
             this.btnactDelete.UseVisualStyleBackColor = true;
             this.btnactDelete.Click += new System.EventHandler(this.btnactDelete_Click);
             // 
-            // activitytbTableAdapter
-            // 
-            this.activitytbTableAdapter.ClearBeforeFill = true;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(417, 147);
@@ -236,6 +192,51 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update Activity";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // activityIDDataGridViewTextBoxColumn
+            // 
+            this.activityIDDataGridViewTextBoxColumn.DataPropertyName = "ActivityID";
+            this.activityIDDataGridViewTextBoxColumn.HeaderText = "ActivityID";
+            this.activityIDDataGridViewTextBoxColumn.Name = "activityIDDataGridViewTextBoxColumn";
+            // 
+            // activityNameDataGridViewTextBoxColumn
+            // 
+            this.activityNameDataGridViewTextBoxColumn.DataPropertyName = "ActivityName";
+            this.activityNameDataGridViewTextBoxColumn.HeaderText = "ActivityName";
+            this.activityNameDataGridViewTextBoxColumn.Name = "activityNameDataGridViewTextBoxColumn";
+            // 
+            // metricOneDataGridViewTextBoxColumn
+            // 
+            this.metricOneDataGridViewTextBoxColumn.DataPropertyName = "MetricOne";
+            this.metricOneDataGridViewTextBoxColumn.HeaderText = "MetricOne";
+            this.metricOneDataGridViewTextBoxColumn.Name = "metricOneDataGridViewTextBoxColumn";
+            // 
+            // metricTwoDataGridViewTextBoxColumn
+            // 
+            this.metricTwoDataGridViewTextBoxColumn.DataPropertyName = "MetricTwo";
+            this.metricTwoDataGridViewTextBoxColumn.HeaderText = "MetricTwo";
+            this.metricTwoDataGridViewTextBoxColumn.Name = "metricTwoDataGridViewTextBoxColumn";
+            // 
+            // metricThreeDataGridViewTextBoxColumn
+            // 
+            this.metricThreeDataGridViewTextBoxColumn.DataPropertyName = "MetricThree";
+            this.metricThreeDataGridViewTextBoxColumn.HeaderText = "MetricThree";
+            this.metricThreeDataGridViewTextBoxColumn.Name = "metricThreeDataGridViewTextBoxColumn";
+            // 
+            // activitytbBindingSource
+            // 
+            this.activitytbBindingSource.DataMember = "Activitytb";
+            this.activitytbBindingSource.DataSource = this.fitnessDataSet;
+            // 
+            // fitnessDataSet
+            // 
+            this.fitnessDataSet.DataSetName = "FitnessDataSet";
+            this.fitnessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // activitytbTableAdapter
+            // 
+            this.activitytbTableAdapter.ClearBeforeFill = true;
             // 
             // Activity
             // 

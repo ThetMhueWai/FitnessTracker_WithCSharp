@@ -150,5 +150,13 @@ namespace FitnessTracker
                 activityAutoID();
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtActivityName.Text == "")
+            {
+                MessageBox.Show("");
+            }
+        }
     }
 }
