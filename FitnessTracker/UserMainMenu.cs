@@ -16,5 +16,19 @@ namespace FitnessTracker
         {
             InitializeComponent();
         }
+
+        private void registerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserRegister userReg = new UserRegister();
+            this.Hide();
+            userReg.ShowDialog();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserLogin userlogin = new UserLogin();
+            this.Hide();
+            userlogin.ShowDialog();
+        }
     }
 }
