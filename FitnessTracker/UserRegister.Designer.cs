@@ -126,6 +126,7 @@
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.Size = new System.Drawing.Size(165, 20);
             this.txtUserPassword.TabIndex = 8;
+            this.txtUserPassword.UseSystemPasswordChar = true;
             // 
             // txtUserEmail
             // 

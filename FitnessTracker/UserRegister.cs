@@ -51,7 +51,16 @@ namespace FitnessTracker
                     txtUserID.Text = "U" + (newid + 1);
                 }
             }
-        } 
+        }
+
+        public void ClearAll()
+        {
+            txtUserName.Text = "";
+            txtUserPassword.Text = "";
+            txtUserEmail.Text = "";
+            txtPhone.Text = "";
+            rdoMale.Checked = true;
+        }
 
         private void UserRegister_Load(object sender, EventArgs e)
         {
