@@ -145,6 +145,11 @@ namespace FitnessTracker
         {
             int row = dgvActivity.CurrentRow.Index;
             txtActivityID.Text = dgvActivity[0, row].Value.ToString();
+            txtActivityName.Text = dgvActivity[1, row].Value.ToString();
+            txtMetricOne.Text = dgvActivity[2, row].Value.ToString();
+            txtMetricTwo.Text = dgvActivity[3, row].Value.ToString();
+            txtMetricThree.Text = dgvActivity[4, row].Value.ToString();
+
             if (txtActivityID.Text == "") 
             {
                 activityAutoID();
@@ -153,10 +158,51 @@ namespace FitnessTracker
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            { 
             if (txtActivityName.Text == "")
             {
                 MessageBox.Show("Enter Activity Name");
+                txtActivityName.Focus();
             }
+            else if (txtMetricOne.Text == "")
+            {
+                MessageBox.Show("Enter Matric One");
+                txtMetricOne.Focus();
+            }
+            else if (txtMetricTwo.Text == "")
+            {
+                MessageBox.Show("Enter Matric Two");
+                txtMetricTwo.Focus();
+            }
+            else if (txtMetricThree.Text == "")
+            {
+                MessageBox.Show("Enter Matric Three");
+                txtMetricThree.Focus();
+            }
+            else
+            {
+                ClsActivity act = new ClsActivity();
+                act.AID = txtActivityID.Text;
+                act.AName = txtActivityName.Text;
+                act.MOne = txtMetricOne.Text;
+                act.MTwo = txtMetricTwo.Text;
+                act.MThree = txtMetricThree.Text;
+
+                activity.UpdateActivityQuery(act.AName, act.MOne, act.MTwo, act.MThree, act.AID);
+                MessageBox.Show("Update Success");
+
+                dgvActivity.DataSource = activity.GetData();
+                dgvActivity.Refresh();
+
+                ClearAll();
+                activityAutoID();
+            }
+          }
+          catch(Exception ex)
+          {
+              MessageBox.Show("Error", ex.Message);
+          }
         }
     }
 }
