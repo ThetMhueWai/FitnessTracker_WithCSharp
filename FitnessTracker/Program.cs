@@ -16,7 +16,7 @@ namespace FitnessTracker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminStart());
+            Application.Run(new UserMainMenu());
         }
     }
 }
