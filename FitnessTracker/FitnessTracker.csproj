@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="ClsActivity.cs" />
     <Compile Include="ClsAdmin.cs" />
+    <Compile Include="ClsUser.cs" />
     <Compile Include="FitnessDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

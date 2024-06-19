@@ -22,8 +22,101 @@ namespace FitnessTracker
 
         private void btnURegister_Click(object sender, EventArgs e)
         {
-            DateTime dob = dtpUserBirth.Value;
-            MessageBox.Show("Date Of Birth" + dob);
+            String password = txtUserPassword.Text;
+            String adminName = txtUserName.Text;
+
+            try
+            {
+                if (txtUserName.Text == "")
+                {
+                    MessageBox.Show("Fill User Name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
+                }
+                else if (txtPhone.Text == "")
+                {
+                    MessageBox.Show("Fill User Phone!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtUserEmail.Text == "")
+                {
+                    MessageBox.Show("Fill User Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserEmail.Focus();
+                }
+                else if (txtUserPassword.Text == "")
+                {
+                    MessageBox.Show("Fill User Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
+
+                }
+                else if (rdoMale.Checked == false && rdoFemale.Checked == false && rdoOther.Checked == false)
+                {
+                    MessageBox.Show("Please Choose Your Gender", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (password.Length < 8 || password.Length > 14)
+                {
+                    MessageBox.Show("Please Vaild Password Length, should enter between 8 and 16", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
+                }
+                else if (!password.Any(char.IsUpper))
+                {
+                    MessageBox.Show("Please should include Upper Character", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
+                }
+                else if (!password.Any(char.IsLower))
+                {
+                    MessageBox.Show("Please should include lower Character", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
+                }
+                else if (!password.Any(char.IsDigit))
+                {
+                    MessageBox.Show("Please should include digit Character", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
+                }
+                else if (!adminName.Any(char.IsDigit))
+                {
+                    MessageBox.Show("Please should include digit Character", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
+                }
+                else
+                {
+                    ClsUser users = new ClsUser();
+                    users.UID = txtUserID.Text;
+                    users.UName = txtUserName.Text;
+                    users.UPassword = txtUserPassword.Text;
+                    users.UEmail = txtUserEmail.Text;
+                    users.UPhone = txtPhone.Text;
+                    users.Udob = dtpUserBirth.Value;
+                    if (rdoMale.Checked == true)
+                    {
+                        users.UGender = "Male";
+                    }
+                    else if (rdoFemale.Checked == true)
+                    {
+                        users.UGender = "Female";
+                    }
+                    else if (rdoOther.Checked == true)
+                    {
+                        users.UGender = "Other";
+                    }
+                    
+
+                    int insertquery = user.UserRegister(users.UID, users.UName, users.UPassword, users.UPhone, users.UEmail, users.UGender, users.Udob.ToString());
+
+                    if (insertquery > 0)
+                    {
+                        MessageBox.Show("Admin data insert Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearAll();
+                        userAutoID();
+
+                        UserLogin Ulogin = new UserLogin();
+                        this.Hide();
+                        Ulogin.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Try Again", ex.Message, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
 
         public void userAutoID()

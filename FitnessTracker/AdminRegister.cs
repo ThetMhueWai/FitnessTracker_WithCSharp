@@ -151,7 +151,7 @@ namespace FitnessTracker
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please Tru Again", ex.Message, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Please Try Again", ex.Message, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
     }
