@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtuname = new System.Windows.Forms.TextBox();
+            this.txtupassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnULogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,19 +56,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "User Password";
             // 
-            // textBox1
+            // txtuname
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtuname.Location = new System.Drawing.Point(173, 82);
+            this.txtuname.Name = "txtuname";
+            this.txtuname.Size = new System.Drawing.Size(100, 20);
+            this.txtuname.TabIndex = 2;
             // 
-            // textBox2
+            // txtupassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtupassword.Location = new System.Drawing.Point(173, 130);
+            this.txtupassword.Name = "txtupassword";
+            this.txtupassword.Size = new System.Drawing.Size(100, 20);
+            this.txtupassword.TabIndex = 3;
             // 
             // label3
             // 
@@ -88,6 +88,7 @@
             this.btnULogin.TabIndex = 5;
             this.btnULogin.Text = "Login";
             this.btnULogin.UseVisualStyleBackColor = true;
+            this.btnULogin.Click += new System.EventHandler(this.btnULogin_Click);
             // 
             // UserLogin
             // 
@@ -96,8 +97,8 @@
             this.ClientSize = new System.Drawing.Size(344, 321);
             this.Controls.Add(this.btnULogin);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtupassword);
+            this.Controls.Add(this.txtuname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserLogin";
@@ -111,8 +112,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtuname;
+        private System.Windows.Forms.TextBox txtupassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnULogin;
     }
