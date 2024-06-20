@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace FitnessTracker
 {
@@ -24,6 +25,7 @@ namespace FitnessTracker
         {
             String password = txtUserPassword.Text;
             String adminName = txtUserName.Text;
+            bool vpassword = is_validPassword(txtUserPassword.Text);
 
             try
             {
@@ -31,6 +33,11 @@ namespace FitnessTracker
                 {
                     MessageBox.Show("Fill User Name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUserName.Focus();
+                }
+                else if (vpassword==false)
+                {
+                    MessageBox.Show("Customer Password format in correct","Warning",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+                    txtUserPassword.Focus();
                 }
                 else if (txtPhone.Text == "")
                 {
@@ -155,9 +162,81 @@ namespace FitnessTracker
             rdoMale.Checked = true;
         }
 
+        private bool is_validPassword(String password)
+        {
+            bool is_valid = true;
+            Regex has_Number = new Regex(@"[0-9]");
+            Regex has_UpperChar = new Regex(@"[A-Z]");
+            Regex has_LowerChar = new Regex(@"[a-z]");
+            Regex has_MinMaxChar = new Regex(@".{8,}");
+
+            if (!has_UpperChar.IsMatch(password))
+            {
+                lblUpper.Text = "X At least 1 upper character";
+                lblUpper.ForeColor = Color.Red;
+                txtUserPassword.Focus();
+                is_valid = false;
+            }
+            else
+            {
+                lblUpper.Text = "Correct 1 Upper Character";
+                lblUpper.ForeColor = Color.Green;
+            }
+
+            if (!has_LowerChar.IsMatch(password))
+            {
+                lblLower.Text = "X At least 1 lower character";
+                lblLower.ForeColor = Color.Red;
+                txtUserPassword.Focus();
+                is_valid = false;
+            }
+            else
+            {
+                lblLower.Text = "Correct 1 lower Character";
+                lblLower.ForeColor = Color.Green;
+            }
+
+            if (!has_MinMaxChar.IsMatch(password))
+            {
+                lblminmax.Text = "X At least 8 characters";
+                lblminmax.ForeColor = Color.Red;
+                txtUserPassword.Focus();
+                is_valid = false;
+            }
+            else
+            {
+                lblminmax.Text = "Correct 8 Character";
+                lblminmax.ForeColor = Color.Green;
+            }
+
+            if (!has_Number.IsMatch(password))
+            {
+                lblnumber.Text = "X At least 1 number";
+                lblnumber.ForeColor = Color.Red;
+                txtUserPassword.Focus();
+                is_valid = false;
+            }
+            else
+            {
+                lblnumber.Text = "Correct 1 number";
+                lblnumber.ForeColor = Color.Green;
+            }
+            return is_valid;
+        }
+
         private void UserRegister_Load(object sender, EventArgs e)
         {
             userAutoID();
+        }
+
+        private void txtUserPassword_TextChanged(object sender, EventArgs e)
+        {
+            bool vpassword = is_validPassword(txtUserPassword.Text);
+            lblLower.Visible = true;
+            lblUpper.Visible = true;
+            lblnumber.Visible = true;
+            lblminmax.Visible = true;
+            
         }
     }
 }

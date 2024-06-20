@@ -55,6 +55,10 @@
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label8 = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
+            this.lblUpper = new System.Windows.Forms.Label();
+            this.lblLower = new System.Windows.Forms.Label();
+            this.lblminmax = new System.Windows.Forms.Label();
+            this.lblnumber = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +131,7 @@
             this.txtUserPassword.Size = new System.Drawing.Size(165, 20);
             this.txtUserPassword.TabIndex = 8;
             this.txtUserPassword.UseSystemPasswordChar = true;
+            this.txtUserPassword.TextChanged += new System.EventHandler(this.txtUserPassword_TextChanged);
             // 
             // txtUserEmail
             // 
@@ -284,11 +289,55 @@
             this.txtUserID.Size = new System.Drawing.Size(100, 20);
             this.txtUserID.TabIndex = 21;
             // 
+            // lblUpper
+            // 
+            this.lblUpper.AutoSize = true;
+            this.lblUpper.Location = new System.Drawing.Point(330, 298);
+            this.lblUpper.Name = "lblUpper";
+            this.lblUpper.Size = new System.Drawing.Size(36, 13);
+            this.lblUpper.TabIndex = 22;
+            this.lblUpper.Text = "Upper";
+            this.lblUpper.Visible = false;
+            // 
+            // lblLower
+            // 
+            this.lblLower.AutoSize = true;
+            this.lblLower.Location = new System.Drawing.Point(330, 321);
+            this.lblLower.Name = "lblLower";
+            this.lblLower.Size = new System.Drawing.Size(36, 13);
+            this.lblLower.TabIndex = 23;
+            this.lblLower.Text = "Lower";
+            this.lblLower.Visible = false;
+            // 
+            // lblminmax
+            // 
+            this.lblminmax.AutoSize = true;
+            this.lblminmax.Location = new System.Drawing.Point(504, 298);
+            this.lblminmax.Name = "lblminmax";
+            this.lblminmax.Size = new System.Drawing.Size(44, 13);
+            this.lblminmax.TabIndex = 24;
+            this.lblminmax.Text = "MinMax";
+            this.lblminmax.Visible = false;
+            // 
+            // lblnumber
+            // 
+            this.lblnumber.AutoSize = true;
+            this.lblnumber.Location = new System.Drawing.Point(504, 322);
+            this.lblnumber.Name = "lblnumber";
+            this.lblnumber.Size = new System.Drawing.Size(44, 13);
+            this.lblnumber.TabIndex = 25;
+            this.lblnumber.Text = "Number";
+            this.lblnumber.Visible = false;
+            // 
             // UserRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 361);
+            this.Controls.Add(this.lblnumber);
+            this.Controls.Add(this.lblminmax);
+            this.Controls.Add(this.lblLower);
+            this.Controls.Add(this.lblUpper);
             this.Controls.Add(this.txtUserID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.menuStrip1);
@@ -347,5 +396,9 @@
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.Label lblUpper;
+        private System.Windows.Forms.Label lblLower;
+        private System.Windows.Forms.Label lblminmax;
+        private System.Windows.Forms.Label lblnumber;
     }
 }
