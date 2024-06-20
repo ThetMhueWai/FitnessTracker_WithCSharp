@@ -37,10 +37,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGoal = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboactivity = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtmetricone = new System.Windows.Forms.TextBox();
+            this.txtmetrictwo = new System.Windows.Forms.TextBox();
+            this.txtmetricthree = new System.Windows.Forms.TextBox();
+            this.txtactID = new System.Windows.Forms.TextBox();
+            this.txtTrackID = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,13 +70,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.txtTrackID);
+            this.groupBox2.Controls.Add(this.txtactID);
+            this.groupBox2.Controls.Add(this.txtmetricthree);
+            this.groupBox2.Controls.Add(this.txtmetrictwo);
+            this.groupBox2.Controls.Add(this.txtmetricone);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cboactivity);
             this.groupBox2.Location = new System.Drawing.Point(4, 133);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 198);
+            this.groupBox2.Size = new System.Drawing.Size(488, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ChooseActivity";
@@ -131,51 +149,123 @@
             this.txtGoal.Size = new System.Drawing.Size(100, 20);
             this.txtGoal.TabIndex = 1;
             // 
-            // comboBox1
+            // cboactivity
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cboactivity.FormattingEnabled = true;
+            this.cboactivity.Location = new System.Drawing.Point(95, 33);
+            this.cboactivity.Name = "cboactivity";
+            this.cboactivity.Size = new System.Drawing.Size(136, 21);
+            this.cboactivity.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 88);
+            this.label4.Location = new System.Drawing.Point(260, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "label4";
+            this.label4.Text = "MetricOne";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(208, 88);
+            this.label5.Location = new System.Drawing.Point(260, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = "label5";
+            this.label5.Text = "MetricTwo";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(301, 88);
+            this.label6.Location = new System.Drawing.Point(260, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 3;
-            this.label6.Text = "label6";
+            this.label6.Text = "MetricThree";
+            // 
+            // txtmetricone
+            // 
+            this.txtmetricone.Location = new System.Drawing.Point(338, 41);
+            this.txtmetricone.Name = "txtmetricone";
+            this.txtmetricone.Size = new System.Drawing.Size(100, 20);
+            this.txtmetricone.TabIndex = 4;
+            // 
+            // txtmetrictwo
+            // 
+            this.txtmetrictwo.Location = new System.Drawing.Point(338, 72);
+            this.txtmetrictwo.Name = "txtmetrictwo";
+            this.txtmetrictwo.Size = new System.Drawing.Size(100, 20);
+            this.txtmetrictwo.TabIndex = 5;
+            // 
+            // txtmetricthree
+            // 
+            this.txtmetricthree.Location = new System.Drawing.Point(338, 102);
+            this.txtmetricthree.Name = "txtmetricthree";
+            this.txtmetricthree.Size = new System.Drawing.Size(100, 20);
+            this.txtmetricthree.TabIndex = 6;
+            // 
+            // txtactID
+            // 
+            this.txtactID.Location = new System.Drawing.Point(8, 81);
+            this.txtactID.Name = "txtactID";
+            this.txtactID.Size = new System.Drawing.Size(100, 20);
+            this.txtactID.TabIndex = 7;
+            // 
+            // txtTrackID
+            // 
+            this.txtTrackID.Location = new System.Drawing.Point(131, 81);
+            this.txtTrackID.Name = "txtTrackID";
+            this.txtTrackID.Size = new System.Drawing.Size(100, 20);
+            this.txtTrackID.TabIndex = 8;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(120, 113);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 23);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Choose Activity";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Activity ID";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(134, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Track ID";
             // 
             // Goal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 330);
+            this.ClientSize = new System.Drawing.Size(504, 291);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Goal";
             this.Text = "Goal";
+            this.Load += new System.EventHandler(this.Goal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -197,9 +287,18 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtGoal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboactivity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtmetricthree;
+        private System.Windows.Forms.TextBox txtmetrictwo;
+        private System.Windows.Forms.TextBox txtmetricone;
+        private System.Windows.Forms.TextBox txtTrackID;
+        private System.Windows.Forms.TextBox txtactID;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -30,6 +30,12 @@ namespace FitnessTracker {
         
         private UsertbDataTable tableUsertb;
         
+        private TracktbDataTable tableTracktb;
+        
+        private global::System.Data.DataRelation relationFK__Tracktb__Activit__37A5467C;
+        
+        private global::System.Data.DataRelation relationFK__Tracktb__UserID__36B12243;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +72,9 @@ namespace FitnessTracker {
                 }
                 if ((ds.Tables["Usertb"] != null)) {
                     base.Tables.Add(new UsertbDataTable(ds.Tables["Usertb"]));
+                }
+                if ((ds.Tables["Tracktb"] != null)) {
+                    base.Tables.Add(new TracktbDataTable(ds.Tables["Tracktb"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +121,16 @@ namespace FitnessTracker {
         public UsertbDataTable Usertb {
             get {
                 return this.tableUsertb;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TracktbDataTable Tracktb {
+            get {
+                return this.tableTracktb;
             }
         }
         
@@ -191,6 +210,9 @@ namespace FitnessTracker {
                 if ((ds.Tables["Usertb"] != null)) {
                     base.Tables.Add(new UsertbDataTable(ds.Tables["Usertb"]));
                 }
+                if ((ds.Tables["Tracktb"] != null)) {
+                    base.Tables.Add(new TracktbDataTable(ds.Tables["Tracktb"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +264,14 @@ namespace FitnessTracker {
                     this.tableUsertb.InitVars();
                 }
             }
+            this.tableTracktb = ((TracktbDataTable)(base.Tables["Tracktb"]));
+            if ((initTable == true)) {
+                if ((this.tableTracktb != null)) {
+                    this.tableTracktb.InitVars();
+                }
+            }
+            this.relationFK__Tracktb__Activit__37A5467C = this.Relations["FK__Tracktb__Activit__37A5467C"];
+            this.relationFK__Tracktb__UserID__36B12243 = this.Relations["FK__Tracktb__UserID__36B12243"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +288,16 @@ namespace FitnessTracker {
             base.Tables.Add(this.tableActivitytb);
             this.tableUsertb = new UsertbDataTable();
             base.Tables.Add(this.tableUsertb);
+            this.tableTracktb = new TracktbDataTable();
+            base.Tables.Add(this.tableTracktb);
+            this.relationFK__Tracktb__Activit__37A5467C = new global::System.Data.DataRelation("FK__Tracktb__Activit__37A5467C", new global::System.Data.DataColumn[] {
+                        this.tableActivitytb.ActivityIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTracktb.ActivityIDColumn}, false);
+            this.Relations.Add(this.relationFK__Tracktb__Activit__37A5467C);
+            this.relationFK__Tracktb__UserID__36B12243 = new global::System.Data.DataRelation("FK__Tracktb__UserID__36B12243", new global::System.Data.DataColumn[] {
+                        this.tableUsertb.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTracktb.UserIDColumn}, false);
+            this.Relations.Add(this.relationFK__Tracktb__UserID__36B12243);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +315,12 @@ namespace FitnessTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeUsertb() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTracktb() {
             return false;
         }
         
@@ -341,6 +387,9 @@ namespace FitnessTracker {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UsertbRowChangeEventHandler(object sender, UsertbRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TracktbRowChangeEventHandler(object sender, TracktbRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1359,6 +1408,379 @@ namespace FitnessTracker {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TracktbDataTable : global::System.Data.TypedTableBase<TracktbRow> {
+            
+            private global::System.Data.DataColumn columnTackID;
+            
+            private global::System.Data.DataColumn columnActivityName;
+            
+            private global::System.Data.DataColumn columnTotalCalBurn;
+            
+            private global::System.Data.DataColumn columnTrackStatus;
+            
+            private global::System.Data.DataColumn columnUserID;
+            
+            private global::System.Data.DataColumn columnActivityID;
+            
+            private global::System.Data.DataColumn columnTrackDate;
+            
+            private global::System.Data.DataColumn columnGoal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbDataTable() {
+                this.TableName = "Tracktb";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TracktbDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TracktbDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TackIDColumn {
+                get {
+                    return this.columnTackID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivityNameColumn {
+                get {
+                    return this.columnActivityName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalCalBurnColumn {
+                get {
+                    return this.columnTotalCalBurn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TrackStatusColumn {
+                get {
+                    return this.columnTrackStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActivityIDColumn {
+                get {
+                    return this.columnActivityID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TrackDateColumn {
+                get {
+                    return this.columnTrackDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GoalColumn {
+                get {
+                    return this.columnGoal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow this[int index] {
+                get {
+                    return ((TracktbRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TracktbRowChangeEventHandler TracktbRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TracktbRowChangeEventHandler TracktbRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TracktbRowChangeEventHandler TracktbRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TracktbRowChangeEventHandler TracktbRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTracktbRow(TracktbRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow AddTracktbRow(string TackID, string ActivityName, int TotalCalBurn, string TrackStatus, UsertbRow parentUsertbRowByFK__Tracktb__UserID__36B12243, ActivitytbRow parentActivitytbRowByFK__Tracktb__Activit__37A5467C, string TrackDate, int Goal) {
+                TracktbRow rowTracktbRow = ((TracktbRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        TackID,
+                        ActivityName,
+                        TotalCalBurn,
+                        TrackStatus,
+                        null,
+                        null,
+                        TrackDate,
+                        Goal};
+                if ((parentUsertbRowByFK__Tracktb__UserID__36B12243 != null)) {
+                    columnValuesArray[4] = parentUsertbRowByFK__Tracktb__UserID__36B12243[0];
+                }
+                if ((parentActivitytbRowByFK__Tracktb__Activit__37A5467C != null)) {
+                    columnValuesArray[5] = parentActivitytbRowByFK__Tracktb__Activit__37A5467C[0];
+                }
+                rowTracktbRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTracktbRow);
+                return rowTracktbRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow FindByTackID(string TackID) {
+                return ((TracktbRow)(this.Rows.Find(new object[] {
+                            TackID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TracktbDataTable cln = ((TracktbDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TracktbDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnTackID = base.Columns["TackID"];
+                this.columnActivityName = base.Columns["ActivityName"];
+                this.columnTotalCalBurn = base.Columns["TotalCalBurn"];
+                this.columnTrackStatus = base.Columns["TrackStatus"];
+                this.columnUserID = base.Columns["UserID"];
+                this.columnActivityID = base.Columns["ActivityID"];
+                this.columnTrackDate = base.Columns["TrackDate"];
+                this.columnGoal = base.Columns["Goal"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnTackID = new global::System.Data.DataColumn("TackID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTackID);
+                this.columnActivityName = new global::System.Data.DataColumn("ActivityName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivityName);
+                this.columnTotalCalBurn = new global::System.Data.DataColumn("TotalCalBurn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCalBurn);
+                this.columnTrackStatus = new global::System.Data.DataColumn("TrackStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTrackStatus);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
+                this.columnActivityID = new global::System.Data.DataColumn("ActivityID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActivityID);
+                this.columnTrackDate = new global::System.Data.DataColumn("TrackDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTrackDate);
+                this.columnGoal = new global::System.Data.DataColumn("Goal", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoal);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnTackID}, true));
+                this.columnTackID.AllowDBNull = false;
+                this.columnTackID.Unique = true;
+                this.columnTackID.MaxLength = 30;
+                this.columnActivityName.AllowDBNull = false;
+                this.columnActivityName.MaxLength = 50;
+                this.columnTrackStatus.MaxLength = 30;
+                this.columnUserID.AllowDBNull = false;
+                this.columnUserID.MaxLength = 30;
+                this.columnActivityID.AllowDBNull = false;
+                this.columnActivityID.MaxLength = 30;
+                this.columnTrackDate.AllowDBNull = false;
+                this.columnTrackDate.MaxLength = 30;
+                this.columnGoal.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow NewTracktbRow() {
+                return ((TracktbRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TracktbRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TracktbRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TracktbRowChanged != null)) {
+                    this.TracktbRowChanged(this, new TracktbRowChangeEvent(((TracktbRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TracktbRowChanging != null)) {
+                    this.TracktbRowChanging(this, new TracktbRowChangeEvent(((TracktbRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TracktbRowDeleted != null)) {
+                    this.TracktbRowDeleted(this, new TracktbRowChangeEvent(((TracktbRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TracktbRowDeleting != null)) {
+                    this.TracktbRowDeleting(this, new TracktbRowChangeEvent(((TracktbRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTracktbRow(TracktbRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FitnessDataSet ds = new FitnessDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TracktbDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AdmintbRow : global::System.Data.DataRow {
@@ -1507,6 +1929,17 @@ namespace FitnessTracker {
                     this[this.tableActivitytb.MetricThreeColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow[] GetTracktbRows() {
+                if ((this.Table.ChildRelations["FK__Tracktb__Activit__37A5467C"] == null)) {
+                    return new TracktbRow[0];
+                }
+                else {
+                    return ((TracktbRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Tracktb__Activit__37A5467C"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1599,6 +2032,176 @@ namespace FitnessTracker {
                     this[this.tableUsertb.DOBColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow[] GetTracktbRows() {
+                if ((this.Table.ChildRelations["FK__Tracktb__UserID__36B12243"] == null)) {
+                    return new TracktbRow[0];
+                }
+                else {
+                    return ((TracktbRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Tracktb__UserID__36B12243"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TracktbRow : global::System.Data.DataRow {
+            
+            private TracktbDataTable tableTracktb;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TracktbRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTracktb = ((TracktbDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TackID {
+                get {
+                    return ((string)(this[this.tableTracktb.TackIDColumn]));
+                }
+                set {
+                    this[this.tableTracktb.TackIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ActivityName {
+                get {
+                    return ((string)(this[this.tableTracktb.ActivityNameColumn]));
+                }
+                set {
+                    this[this.tableTracktb.ActivityNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TotalCalBurn {
+                get {
+                    try {
+                        return ((int)(this[this.tableTracktb.TotalCalBurnColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCalBurn\' in table \'Tracktb\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTracktb.TotalCalBurnColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TrackStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableTracktb.TrackStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TrackStatus\' in table \'Tracktb\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTracktb.TrackStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UserID {
+                get {
+                    return ((string)(this[this.tableTracktb.UserIDColumn]));
+                }
+                set {
+                    this[this.tableTracktb.UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ActivityID {
+                get {
+                    return ((string)(this[this.tableTracktb.ActivityIDColumn]));
+                }
+                set {
+                    this[this.tableTracktb.ActivityIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TrackDate {
+                get {
+                    return ((string)(this[this.tableTracktb.TrackDateColumn]));
+                }
+                set {
+                    this[this.tableTracktb.TrackDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Goal {
+                get {
+                    return ((int)(this[this.tableTracktb.GoalColumn]));
+                }
+                set {
+                    this[this.tableTracktb.GoalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ActivitytbRow ActivitytbRow {
+                get {
+                    return ((ActivitytbRow)(this.GetParentRow(this.Table.ParentRelations["FK__Tracktb__Activit__37A5467C"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Tracktb__Activit__37A5467C"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UsertbRow UsertbRow {
+                get {
+                    return ((UsertbRow)(this.GetParentRow(this.Table.ParentRelations["FK__Tracktb__UserID__36B12243"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Tracktb__UserID__36B12243"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalCalBurnNull() {
+                return this.IsNull(this.tableTracktb.TotalCalBurnColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalCalBurnNull() {
+                this[this.tableTracktb.TotalCalBurnColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTrackStatusNull() {
+                return this.IsNull(this.tableTracktb.TrackStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTrackStatusNull() {
+                this[this.tableTracktb.TrackStatusColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1689,6 +2292,40 @@ namespace FitnessTracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public UsertbRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TracktbRowChangeEvent : global::System.EventArgs {
+            
+            private TracktbRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRowChangeEvent(TracktbRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TracktbRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3418,6 +4055,526 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TracktbTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public TracktbTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Tracktb";
+            tableMapping.ColumnMappings.Add("TackID", "TackID");
+            tableMapping.ColumnMappings.Add("ActivityName", "ActivityName");
+            tableMapping.ColumnMappings.Add("TotalCalBurn", "TotalCalBurn");
+            tableMapping.ColumnMappings.Add("TrackStatus", "TrackStatus");
+            tableMapping.ColumnMappings.Add("UserID", "UserID");
+            tableMapping.ColumnMappings.Add("ActivityID", "ActivityID");
+            tableMapping.ColumnMappings.Add("TrackDate", "TrackDate");
+            tableMapping.ColumnMappings.Add("Goal", "Goal");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Tracktb] WHERE (([TackID] = @Original_TackID) AND ([ActivityName] = @Original_ActivityName) AND ((@IsNull_TotalCalBurn = 1 AND [TotalCalBurn] IS NULL) OR ([TotalCalBurn] = @Original_TotalCalBurn)) AND ((@IsNull_TrackStatus = 1 AND [TrackStatus] IS NULL) OR ([TrackStatus] = @Original_TrackStatus)) AND ([UserID] = @Original_UserID) AND ([ActivityID] = @Original_ActivityID) AND ([TrackDate] = @Original_TrackDate) AND ([Goal] = @Original_Goal))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TackID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TackID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TrackStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TrackStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TrackDate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Goal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Goal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Tracktb] ([TackID], [ActivityName], [TotalCalBurn], [TrackStatus], [UserID], [ActivityID], [TrackDate], [Goal]) VALUES (@TackID, @ActivityName, @TotalCalBurn, @TrackStatus, @UserID, @ActivityID, @TrackDate, @Goal);
+SELECT TackID, ActivityName, TotalCalBurn, TrackStatus, UserID, ActivityID, TrackDate, Goal FROM Tracktb WHERE (TackID = @TackID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TackID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TackID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrackStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrackDate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Goal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Goal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Tracktb] SET [TackID] = @TackID, [ActivityName] = @ActivityName, [TotalCalBurn] = @TotalCalBurn, [TrackStatus] = @TrackStatus, [UserID] = @UserID, [ActivityID] = @ActivityID, [TrackDate] = @TrackDate, [Goal] = @Goal WHERE (([TackID] = @Original_TackID) AND ([ActivityName] = @Original_ActivityName) AND ((@IsNull_TotalCalBurn = 1 AND [TotalCalBurn] IS NULL) OR ([TotalCalBurn] = @Original_TotalCalBurn)) AND ((@IsNull_TrackStatus = 1 AND [TrackStatus] IS NULL) OR ([TrackStatus] = @Original_TrackStatus)) AND ([UserID] = @Original_UserID) AND ([ActivityID] = @Original_ActivityID) AND ([TrackDate] = @Original_TrackDate) AND ([Goal] = @Original_Goal));
+SELECT TackID, ActivityName, TotalCalBurn, TrackStatus, UserID, ActivityID, TrackDate, Goal FROM Tracktb WHERE (TackID = @TackID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TackID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TackID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrackStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrackDate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Goal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Goal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TackID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TackID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalCalBurn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalCalBurn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TrackStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TrackStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ActivityID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TrackDate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TrackDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Goal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Goal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FitnessTracker.Properties.Settings.Default.FittnessdbConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        Tracktb.*\r\nFROM            Tracktb";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FitnessDataSet.TracktbDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FitnessDataSet.TracktbDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FitnessDataSet.TracktbDataTable dataTable = new FitnessDataSet.TracktbDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FitnessDataSet.TracktbDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FitnessDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Tracktb");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_TackID, string Original_ActivityName, global::System.Nullable<int> Original_TotalCalBurn, string Original_TrackStatus, string Original_UserID, string Original_ActivityID, string Original_TrackDate, int Original_Goal) {
+            if ((Original_TackID == null)) {
+                throw new global::System.ArgumentNullException("Original_TackID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_TackID));
+            }
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_ActivityName));
+            }
+            if ((Original_TotalCalBurn.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_TotalCalBurn.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TrackStatus == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_TrackStatus));
+            }
+            if ((Original_UserID == null)) {
+                throw new global::System.ArgumentNullException("Original_UserID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_UserID));
+            }
+            if ((Original_ActivityID == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ActivityID));
+            }
+            if ((Original_TrackDate == null)) {
+                throw new global::System.ArgumentNullException("Original_TrackDate");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_TrackDate));
+            }
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_Goal));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string TackID, string ActivityName, global::System.Nullable<int> TotalCalBurn, string TrackStatus, string UserID, string ActivityID, string TrackDate, int Goal) {
+            if ((TackID == null)) {
+                throw new global::System.ArgumentNullException("TackID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TackID));
+            }
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ActivityName));
+            }
+            if ((TotalCalBurn.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TotalCalBurn.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((TrackStatus == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TrackStatus));
+            }
+            if ((UserID == null)) {
+                throw new global::System.ArgumentNullException("UserID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(UserID));
+            }
+            if ((ActivityID == null)) {
+                throw new global::System.ArgumentNullException("ActivityID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ActivityID));
+            }
+            if ((TrackDate == null)) {
+                throw new global::System.ArgumentNullException("TrackDate");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TrackDate));
+            }
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Goal));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string TackID, 
+                    string ActivityName, 
+                    global::System.Nullable<int> TotalCalBurn, 
+                    string TrackStatus, 
+                    string UserID, 
+                    string ActivityID, 
+                    string TrackDate, 
+                    int Goal, 
+                    string Original_TackID, 
+                    string Original_ActivityName, 
+                    global::System.Nullable<int> Original_TotalCalBurn, 
+                    string Original_TrackStatus, 
+                    string Original_UserID, 
+                    string Original_ActivityID, 
+                    string Original_TrackDate, 
+                    int Original_Goal) {
+            if ((TackID == null)) {
+                throw new global::System.ArgumentNullException("TackID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TackID));
+            }
+            if ((ActivityName == null)) {
+                throw new global::System.ArgumentNullException("ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ActivityName));
+            }
+            if ((TotalCalBurn.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TotalCalBurn.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((TrackStatus == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TrackStatus));
+            }
+            if ((UserID == null)) {
+                throw new global::System.ArgumentNullException("UserID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(UserID));
+            }
+            if ((ActivityID == null)) {
+                throw new global::System.ArgumentNullException("ActivityID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(ActivityID));
+            }
+            if ((TrackDate == null)) {
+                throw new global::System.ArgumentNullException("TrackDate");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(TrackDate));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Goal));
+            if ((Original_TackID == null)) {
+                throw new global::System.ArgumentNullException("Original_TackID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_TackID));
+            }
+            if ((Original_ActivityName == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_ActivityName));
+            }
+            if ((Original_TotalCalBurn.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TotalCalBurn.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TrackStatus == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_TrackStatus));
+            }
+            if ((Original_UserID == null)) {
+                throw new global::System.ArgumentNullException("Original_UserID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_UserID));
+            }
+            if ((Original_ActivityID == null)) {
+                throw new global::System.ArgumentNullException("Original_ActivityID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ActivityID));
+            }
+            if ((Original_TrackDate == null)) {
+                throw new global::System.ArgumentNullException("Original_TrackDate");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_TrackDate));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Goal));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ActivityName, global::System.Nullable<int> TotalCalBurn, string TrackStatus, string UserID, string ActivityID, string TrackDate, int Goal, string Original_TackID, string Original_ActivityName, global::System.Nullable<int> Original_TotalCalBurn, string Original_TrackStatus, string Original_UserID, string Original_ActivityID, string Original_TrackDate, int Original_Goal) {
+            return this.Update(Original_TackID, ActivityName, TotalCalBurn, TrackStatus, UserID, ActivityID, TrackDate, Goal, Original_TackID, Original_ActivityName, Original_TotalCalBurn, Original_TrackStatus, Original_UserID, Original_ActivityID, Original_TrackDate, Original_Goal);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3434,6 +4591,8 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
         private ActivitytbTableAdapter _activitytbTableAdapter;
         
         private UsertbTableAdapter _usertbTableAdapter;
+        
+        private TracktbTableAdapter _tracktbTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -3494,6 +4653,20 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TracktbTableAdapter TracktbTableAdapter {
+            get {
+                return this._tracktbTableAdapter;
+            }
+            set {
+                this._tracktbTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -3523,6 +4696,10 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                             && (this._usertbTableAdapter.Connection != null))) {
                     return this._usertbTableAdapter.Connection;
                 }
+                if (((this._tracktbTableAdapter != null) 
+                            && (this._tracktbTableAdapter.Connection != null))) {
+                    return this._tracktbTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -3545,6 +4722,9 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                 if ((this._usertbTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tracktbTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -3556,15 +4736,6 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(FitnessDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._admintbTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._admintbTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._activitytbTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Activitytb.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -3583,6 +4754,24 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._admintbTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._admintbTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tracktbTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Tracktb.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tracktbTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -3593,14 +4782,6 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(FitnessDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._admintbTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._admintbTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._activitytbTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Activitytb.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3617,6 +4798,22 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._admintbTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._admintbTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tracktbTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Tracktb.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tracktbTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -3627,6 +4824,22 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(FitnessDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tracktbTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Tracktb.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tracktbTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._admintbTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._admintbTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._usertbTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Usertb.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -3640,14 +4853,6 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._activitytbTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._admintbTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Admintb.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._admintbTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3702,6 +4907,11 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
             }
             if (((this._usertbTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._usertbTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._tracktbTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tracktbTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -3762,6 +4972,15 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                     if (this._usertbTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._usertbTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usertbTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tracktbTableAdapter != null)) {
+                    revertConnections.Add(this._tracktbTableAdapter, this._tracktbTableAdapter.Connection);
+                    this._tracktbTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tracktbTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tracktbTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tracktbTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tracktbTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3833,6 +5052,10 @@ SELECT UserID, UserName, UserPassword, UserPhone, UserEmail, Gender, DOB FROM Us
                 if ((this._usertbTableAdapter != null)) {
                     this._usertbTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usertbTableAdapter]));
                     this._usertbTableAdapter.Transaction = null;
+                }
+                if ((this._tracktbTableAdapter != null)) {
+                    this._tracktbTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tracktbTableAdapter]));
+                    this._tracktbTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

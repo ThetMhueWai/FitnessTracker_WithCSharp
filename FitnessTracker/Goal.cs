@@ -12,9 +12,18 @@ namespace FitnessTracker
 {
     public partial class Goal : Form
     {
+
         public Goal()
         {
             InitializeComponent();
+        }
+
+        private void Goal_Load(object sender, EventArgs e)
+        {
+            txtmID.Text=UserLogin.loginUID;
+            txtmName.Text = UserLogin.loginUName;
+
+
         }
     }
 }
