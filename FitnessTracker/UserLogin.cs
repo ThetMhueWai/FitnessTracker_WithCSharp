@@ -57,9 +57,9 @@ namespace FitnessTracker
                         loginUID = usertda.Rows[0][0].ToString();
                         loginUName = usertda.Rows[0][1].ToString();
 
-                        //AdminDashboard Adashboard = new AdminDashboard();
-                        //this.Hide();
-                        //Adashboard.ShowDialog();
+                        Goal goal = new Goal();
+                        this.Hide();
+                        goal.ShowDialog();
                     }
                     else
                     {
