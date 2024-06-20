@@ -50,12 +50,50 @@ namespace FitnessTracker
                 }
             }
         }
+
+        public void selectactivity()
+        {
+            activitydta = activity.GetData();
+            if (activitydta.Rows.Count > 0)
+            {
+                DataRow dr = activitydta.NewRow();
+                cboactivity.DataSource = activitydta;
+
+                cboactivity.DisplayMember = "actName";
+                cboactivity.ValueMember = "actID";
+
+            }
+        }
+
         private void Goal_Load(object sender, EventArgs e)
         {
             txtmID.Text=UserLogin.loginUID;
             txtmName.Text = UserLogin.loginUName;
             trackAutoID();
+            txtactID.Text = "";
+        }
 
+        private void cboactivity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String id = cboactivity.SelectedValue.ToString();
+            txtactID.Text = id;
+
+            activitydta = activity.SelectActivity(txtactID.Text);
+            if (activitydta.Rows.Count > 0)
+            {
+                txtmetricone.Text=activitydta.Rows[0]["MetricOne"].ToString();
+                txtmetrictwo.Text=activitydta.Rows[0]["MetricTwo"].ToString();
+                txtmetricthree.Text=activitydta.Rows[0]["MetricThree"].ToString();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            track.RecordTrack(txtactID.Text, cboactivity.Text, "Incomplete", txtmID.Text, txtactID.Text, goalDate.Text, Convert.ToInt32(txtGoal.Text));
+
+            Track t = new Track();
+            this.Hide();
+            t.ShowDialog();
         }
     }
 }
