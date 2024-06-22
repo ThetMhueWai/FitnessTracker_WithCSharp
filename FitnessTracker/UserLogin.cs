@@ -60,6 +60,7 @@ namespace FitnessTracker
                         Goal goal = new Goal();
                         this.Hide();
                         goal.ShowDialog();
+                        
                     }
                     else
                     {

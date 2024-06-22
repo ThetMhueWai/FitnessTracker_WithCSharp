@@ -13,5 +13,6 @@ D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.AdminStart.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Activity.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserRegister.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserMainMenu.resources
-D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserDashboard.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserLogin.resources
+D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Goal.resources
+D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Track.resources

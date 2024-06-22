@@ -26,15 +26,15 @@ namespace FitnessTracker
         }
         public void trackAutoID()
         {
-            usertda = user.GetData();
-            if (usertda.Rows.Count == 0)
+            trackdta = track.GetData();
+            if (trackdta.Rows.Count == 0)
             {
                 txtTrackID.Text = "T001";
             }
             else
             {
-                int size = usertda.Rows.Count - 1;
-                string oldid = usertda.Rows[size][0].ToString();
+                int size = trackdta.Rows.Count - 1;
+                string oldid = trackdta.Rows[size][0].ToString();
                 int newid = Convert.ToInt32(oldid.Substring(1, 3));
                 if (newid >= 1 && newid < 9)
                 {
@@ -51,22 +51,24 @@ namespace FitnessTracker
             }
         }
 
-        public void selectactivity()
-        {
-            activitydta = activity.GetData();
-            if (activitydta.Rows.Count > 0)
-            {
-                DataRow dr = activitydta.NewRow();
-                cboactivity.DataSource = activitydta;
+        //public void selectactivity()
+        //{
+        //    activitydta = activity.GetData();
+        //    if (activitydta.Rows.Count > 0)
+        //    {
+        //        DataRow dr = activitydta.NewRow();
+        //        cboactivity.DataSource = activitydta;
 
-                cboactivity.DisplayMember = "actName";
-                cboactivity.ValueMember = "actID";
+        //        cboactivity.DisplayMember = "actName";
+        //        cboactivity.ValueMember = "actID";
 
-            }
-        }
+        //    }
+        //}
 
         private void Goal_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fitnessDataSet.Activitytb' table. You can move, or remove it, as needed.
+            this.activitytbTableAdapter.Fill(this.fitnessDataSet.Activitytb);
             txtmID.Text=UserLogin.loginUID;
             txtmName.Text = UserLogin.loginUName;
             trackAutoID();
@@ -89,11 +91,19 @@ namespace FitnessTracker
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            track.RecordTrack(txtactID.Text, cboactivity.Text, "Incomplete", txtmID.Text, txtactID.Text, goalDate.Text, Convert.ToInt32(txtGoal.Text));
+            int recordedCount=track.RecordTrack(txtTrackID.Text, cboactivity.Text, "Incomplete", txtmID.Text, txtactID.Text, goalDate.Text, Convert.ToInt32(txtGoal.Text));
+            
+            if (recordedCount > 0)
+            {
+                MessageBox.Show("Define Goal Successfully");
+                Track t = new Track();
 
-            Track t = new Track();
-            this.Hide();
-            t.ShowDialog();
+                
+
+                this.Hide();
+                t.ShowDialog();
+
+            }
         }
     }
 }

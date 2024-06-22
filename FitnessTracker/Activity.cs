@@ -51,6 +51,8 @@ namespace FitnessTracker
 
         private void Activity_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fitnessDataSet.Tracktb' table. You can move, or remove it, as needed.
+            this.tracktbTableAdapter.Fill(this.fitnessDataSet.Tracktb);
             // TODO: This line of code loads data into the 'fitnessDataSet.Activitytb' table. You can move, or remove it, as needed.
             this.activitytbTableAdapter.Fill(this.fitnessDataSet.Activitytb);
             activityAutoID();
@@ -94,7 +96,7 @@ namespace FitnessTracker
 
                 activities.MThree = txtMetricThree.Text;
 
-                int insertquery = activity.InsertActivityQuery(activities.AID, activities.AName, activities.MOne, activities.MTwo, activities.MThree);
+                int insertquery = activity.InsertActivity(activities.AID, activities.AName, activities.MOne, activities.MTwo, activities.MThree);
                 if (insertquery > 0)
                 {
                     MessageBox.Show("Activity data insert Successfully Save", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -188,8 +190,9 @@ namespace FitnessTracker
                 act.MOne = txtMetricOne.Text;
                 act.MTwo = txtMetricTwo.Text;
                 act.MThree = txtMetricThree.Text;
+           
 
-                activity.UpdateActivityQuery(act.AName, act.MOne, act.MTwo, act.MThree, act.AID);
+                activity.UpdateActivity(act.AName, act.MOne, act.MTwo, act.MThree, act.AID);
                 MessageBox.Show("Update Success");
 
                 dgvActivity.DataSource = activity.GetData();

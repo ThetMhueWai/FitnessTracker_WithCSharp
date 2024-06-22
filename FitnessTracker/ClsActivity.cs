@@ -8,7 +8,7 @@ namespace FitnessTracker
 {
     class ClsActivity
     {
-        String actID, actName, mone, mtwo, mthree;
+        String actID, actName, mone, mtwo, mthree, calb;
 
         public String AID
         {

@@ -42,10 +42,10 @@
             // txtadminuID
             // 
             this.txtadminuID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtadminuID.Location = new System.Drawing.Point(178, 155);
+            this.txtadminuID.Location = new System.Drawing.Point(361, 48);
             this.txtadminuID.Name = "txtadminuID";
             this.txtadminuID.ReadOnly = true;
-            this.txtadminuID.Size = new System.Drawing.Size(206, 20);
+            this.txtadminuID.Size = new System.Drawing.Size(162, 20);
             this.txtadminuID.TabIndex = 1;
             // 
             // bindingNavigator1
