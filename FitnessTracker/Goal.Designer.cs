@@ -66,6 +66,7 @@
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setGoalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activitytbBindingSource3)).BeginInit();
@@ -325,7 +326,8 @@
             this.informationToolStripMenuItem,
             this.activitiesToolStripMenuItem,
             this.accountToolStripMenuItem,
-            this.setGoalToolStripMenuItem});
+            this.setGoalToolStripMenuItem,
+            this.searchToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(598, 24);
@@ -378,6 +380,13 @@
             this.setGoalToolStripMenuItem.Name = "setGoalToolStripMenuItem";
             this.setGoalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.setGoalToolStripMenuItem.Text = "SetGoal";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // Goal
             // 
@@ -448,5 +457,6 @@
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setGoalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
     }
 }

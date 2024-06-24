@@ -30,6 +30,7 @@ namespace FitnessTracker
             trackdta = track.GetData();
             dgvTrack.DataSource = trackdta;
 
+            trackdta=track.GetDataByUserID(UserLogin.loginUID);
 
         }
 
@@ -40,6 +41,48 @@ namespace FitnessTracker
             txtgoal.Text = dgvTrack[7, row].Value.ToString();
 
             dgvTrack.Refresh();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            int met = Convert.ToInt32(txtMet.Text);
+            int weight = Convert.ToInt32(txtbodyWeight.Text);
+            int hours = Convert.ToInt32(txtTimetaken.Text);
+
+            int result = met * weight * hours;
+            txtTotalcal.Text = Convert.ToString(result);
+        }
+
+        public void clearall()
+        {
+            txtMet.Text = "";
+            txtTimetaken.Text = "";
+            txtbodyWeight.Text = "";
+            txtTotalcal.Text = "";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int goal = Convert.ToInt32(txtgoal.Text);
+            if (Convert.ToInt32(txtTotalcal.Text) >= goal)
+            {
+                track.UpdateTrackInformation("Complete", Convert.ToInt32(txtTotalcal.Text), txtTrackID.Text);
+                MessageBox.Show("Your Calories Burning Goal is Complete!");
+
+                dgvTrack.DataSource = track.GetDataByUserID(UserLogin.loginUID);
+                dgvTrack.Refresh();
+
+                clearall();
+            }
+            else 
+            {
+                MessageBox.Show("Sorry! You Cannot get your goal Try Again");
+
+                UserLogin ul = new UserLogin();
+                this.Hide();
+                ul.ShowDialog();
+            }
+
         }
     }
 }

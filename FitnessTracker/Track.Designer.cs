@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTrack = new System.Windows.Forms.DataGridView();
-            this.tracktbBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fitnessDataSet = new FitnessTracker.FitnessDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
@@ -49,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tracktbTableAdapter = new FitnessTracker.FitnessDataSetTableAdapters.TracktbTableAdapter();
-            this.tracktbBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.trackIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activityNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCalBurnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,12 +55,26 @@
             this.activityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trackDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tracktbBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fitnessDataSet = new FitnessTracker.FitnessDataSet();
+            this.tracktbTableAdapter = new FitnessTracker.FitnessDataSetTableAdapters.TracktbTableAdapter();
+            this.tracktbBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.walkingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swimmingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setGoalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTrack
@@ -81,30 +91,20 @@
             this.trackDateDataGridViewTextBoxColumn,
             this.goalDataGridViewTextBoxColumn});
             this.dgvTrack.DataSource = this.tracktbBindingSource;
-            this.dgvTrack.Location = new System.Drawing.Point(3, 4);
+            this.dgvTrack.Location = new System.Drawing.Point(12, 53);
             this.dgvTrack.Name = "dgvTrack";
-            this.dgvTrack.Size = new System.Drawing.Size(798, 164);
+            this.dgvTrack.Size = new System.Drawing.Size(773, 164);
             this.dgvTrack.TabIndex = 0;
             this.dgvTrack.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrack_CellClick);
-            // 
-            // tracktbBindingSource
-            // 
-            this.tracktbBindingSource.DataMember = "Tracktb";
-            this.tracktbBindingSource.DataSource = this.fitnessDataSet;
-            // 
-            // fitnessDataSet
-            // 
-            this.fitnessDataSet.DataSetName = "FitnessDataSet";
-            this.fitnessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnCalculate);
+            this.groupBox1.Controls.Add(this.txtgoal);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTotalcal);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtgoal);
             this.groupBox1.Controls.Add(this.txtTimetaken);
             this.groupBox1.Controls.Add(this.txtbodyWeight);
             this.groupBox1.Controls.Add(this.txtMet);
@@ -113,7 +113,7 @@
             this.groupBox1.Controls.Add(this.lblmet);
             this.groupBox1.Controls.Add(this.txtTrackID);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 174);
+            this.groupBox1.Location = new System.Drawing.Point(12, 223);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(389, 216);
             this.groupBox1.TabIndex = 1;
@@ -128,19 +128,21 @@
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(204, 111);
+            this.btnCalculate.Location = new System.Drawing.Point(15, 151);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(171, 23);
             this.btnCalculate.TabIndex = 12;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // txtTotalcal
             // 
-            this.txtTotalcal.Location = new System.Drawing.Point(86, 148);
+            this.txtTotalcal.Location = new System.Drawing.Point(86, 115);
             this.txtTotalcal.Name = "txtTotalcal";
             this.txtTotalcal.Size = new System.Drawing.Size(100, 20);
             this.txtTotalcal.TabIndex = 11;
@@ -148,7 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 151);
+            this.label5.Location = new System.Drawing.Point(9, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 10;
@@ -157,7 +159,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 111);
+            this.label2.Location = new System.Drawing.Point(9, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 9;
@@ -165,7 +167,7 @@
             // 
             // txtgoal
             // 
-            this.txtgoal.Location = new System.Drawing.Point(86, 108);
+            this.txtgoal.Location = new System.Drawing.Point(86, 72);
             this.txtgoal.Name = "txtgoal";
             this.txtgoal.Size = new System.Drawing.Size(100, 20);
             this.txtgoal.TabIndex = 8;
@@ -186,7 +188,7 @@
             // 
             // txtMet
             // 
-            this.txtMet.Location = new System.Drawing.Point(86, 69);
+            this.txtMet.Location = new System.Drawing.Point(275, 112);
             this.txtMet.Name = "txtMet";
             this.txtMet.Size = new System.Drawing.Size(100, 20);
             this.txtMet.TabIndex = 5;
@@ -212,7 +214,7 @@
             // lblmet
             // 
             this.lblmet.AutoSize = true;
-            this.lblmet.Location = new System.Drawing.Point(12, 72);
+            this.lblmet.Location = new System.Drawing.Point(201, 115);
             this.lblmet.Name = "lblmet";
             this.lblmet.Size = new System.Drawing.Size(30, 13);
             this.lblmet.TabIndex = 2;
@@ -237,7 +239,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(399, 174);
+            this.groupBox2.Location = new System.Drawing.Point(408, 223);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(377, 216);
             this.groupBox2.TabIndex = 2;
@@ -252,15 +254,6 @@
             this.label6.Size = new System.Drawing.Size(262, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "MET ka br lal body weight ka br lal time taken ka br lal";
-            // 
-            // tracktbTableAdapter
-            // 
-            this.tracktbTableAdapter.ClearBeforeFill = true;
-            // 
-            // tracktbBindingSource1
-            // 
-            this.tracktbBindingSource1.DataMember = "Tracktb";
-            this.tracktbBindingSource1.DataSource = this.fitnessDataSet;
             // 
             // trackIDDataGridViewTextBoxColumn
             // 
@@ -310,11 +303,98 @@
             this.goalDataGridViewTextBoxColumn.HeaderText = "Goal";
             this.goalDataGridViewTextBoxColumn.Name = "goalDataGridViewTextBoxColumn";
             // 
+            // tracktbBindingSource
+            // 
+            this.tracktbBindingSource.DataMember = "Tracktb";
+            this.tracktbBindingSource.DataSource = this.fitnessDataSet;
+            // 
+            // fitnessDataSet
+            // 
+            this.fitnessDataSet.DataSetName = "FitnessDataSet";
+            this.fitnessDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tracktbTableAdapter
+            // 
+            this.tracktbTableAdapter.ClearBeforeFill = true;
+            // 
+            // tracktbBindingSource1
+            // 
+            this.tracktbBindingSource1.DataMember = "Tracktb";
+            this.tracktbBindingSource1.DataSource = this.fitnessDataSet;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informationToolStripMenuItem,
+            this.activitiesToolStripMenuItem,
+            this.accountToolStripMenuItem,
+            this.setGoalToolStripMenuItem,
+            this.searchToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(842, 24);
+            this.menuStrip1.TabIndex = 22;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // informationToolStripMenuItem
+            // 
+            this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
+            this.informationToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.informationToolStripMenuItem.Text = "Information";
+            // 
+            // activitiesToolStripMenuItem
+            // 
+            this.activitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.walkingToolStripMenuItem,
+            this.swimmingToolStripMenuItem});
+            this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.activitiesToolStripMenuItem.Text = "Activities";
+            // 
+            // walkingToolStripMenuItem
+            // 
+            this.walkingToolStripMenuItem.Name = "walkingToolStripMenuItem";
+            this.walkingToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.walkingToolStripMenuItem.Text = "Walking";
+            // 
+            // swimmingToolStripMenuItem
+            // 
+            this.swimmingToolStripMenuItem.Name = "swimmingToolStripMenuItem";
+            this.swimmingToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.swimmingToolStripMenuItem.Text = "Swimming";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutToolStripMenuItem});
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.accountToolStripMenuItem.Text = "Account";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            // 
+            // setGoalToolStripMenuItem
+            // 
+            this.setGoalToolStripMenuItem.Name = "setGoalToolStripMenuItem";
+            this.setGoalToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.setGoalToolStripMenuItem.Text = "SetGoal";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.searchToolStripMenuItem.Text = "Search";
+            // 
             // Track
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 402);
+            this.ClientSize = new System.Drawing.Size(842, 445);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTrack);
@@ -322,14 +402,17 @@
             this.Text = "Track";
             this.Load += new System.EventHandler(this.Track_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fitnessDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tracktbBindingSource1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -366,5 +449,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn activityIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trackDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem activitiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem walkingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem swimmingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setGoalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
     }
 }

@@ -105,5 +105,11 @@ namespace FitnessTracker
 
             }
         }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserSearch usearch = new UserSearch();
+            usearch.ShowDialog();
+        }
     }
 }

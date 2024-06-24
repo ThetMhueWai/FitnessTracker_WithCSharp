@@ -16,3 +16,4 @@ D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserMainMenu.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserLogin.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Goal.resources
 D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.Track.resources
+D:\FitnessTracker\FitnessTracker\obj\Debug\FitnessTracker.UserSearch.resources

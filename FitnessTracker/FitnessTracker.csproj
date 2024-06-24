@@ -114,6 +114,12 @@
     <Compile Include="UserRegister.Designer.cs">
       <DependentUpon>UserRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSearch.Designer.cs">
+      <DependentUpon>UserSearch.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Activity.resx">
       <DependentUpon>Activity.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserRegister.resx">
       <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSearch.resx">
+      <DependentUpon>UserSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="FitnessDataSet.xsc">
       <DependentUpon>FitnessDataSet.xsd</DependentUpon>
